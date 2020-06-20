@@ -27,7 +27,6 @@ const Routing = () => {
     }
   },[])
   return(
-    //TODO: Step 1 - Add route
     <Switch>
       <Route exact path="/">
         <Home/>
