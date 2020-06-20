@@ -11,8 +11,6 @@ import UserProfile from './compoment/view/UserProfile';
 import SubUserPost from './compoment/view/SubUserPost';
 import {reducer, initialState} from './reducer/userReducer';
 
-const port = process.env.port;
-
 export const UserContext = createContext()
 
 const Routing = () => {
