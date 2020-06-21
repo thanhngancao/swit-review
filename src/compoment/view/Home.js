@@ -60,7 +60,7 @@ const Home = (props) => {
     }
     console.log(props)
     const updatePostHandler = (postId) => {
-        props.history.push('https://server-review.herokuapp.com/edit-post/' + postId);
+        props.history.push('/edit-post/' + postId);
     }
     return(
         <div className="home">
@@ -80,7 +80,7 @@ const Home = (props) => {
                                     
                                     }
                                     {item.postedBy._id == state._id && 
-                                    <i className="material-icons" style={{float:"right"}}
+                                    <i className="material-icons" style={{float:"right", cursor: 'pointer'}}
                                         onClick={() => updatePostHandler(item._id)}>
                                         edit
                                     </i>

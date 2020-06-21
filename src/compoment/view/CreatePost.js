@@ -13,7 +13,7 @@ const CreatePost = (props) => {
     useEffect(()=>{
         if(props.mode === 'edit') {
             if(history.location.pathname.split('/')[2]) {
-                fetch("/posts/" + history.location.pathname.split('/')[2],{
+                fetch("https://server-review.herokuapp.com/posts/" + history.location.pathname.split('/')[2],{
                     method: "get",
                     headers:{
                         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const CreatePost = (props) => {
         let urlApi = 'https://server-review.herokuapp.com/createnewsfeed';
         let METHOD = "POST";
         if(props.mode === 'edit') {
-            urlApi = "/posts/" + history.location.pathname.split('/')[2];
+            urlApi = "https://server-review.herokuapp.com/posts/" + history.location.pathname.split('/')[2];
             METHOD = 'PUT';
         }
         if(urlimage){
@@ -121,7 +121,7 @@ const CreatePost = (props) => {
                     height: "360px",
                     padding:"20px", 
                     textAlign:"center"}}>
-            {title ? 
+            {urlimage ? 
                 <div>
                     <input type="text" 
                         placeholder="Write your review!"
