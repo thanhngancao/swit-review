@@ -11,7 +11,7 @@ const Profile = () => {
     // check info
     //console.log(userid)
     useEffect(()=>{
-        fetch(`/user/${userid}`, {
+        fetch(`https://server-review.herokuapp.com/user/${userid}`, {
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }
@@ -28,7 +28,7 @@ const Profile = () => {
 
     //make a follower user
     const followUser = () => {
-        fetch('/follow', {
+        fetch('https://server-review.herokuapp.com/follow', {
             method:"put",
             headers:{
                 "Content-Type":"application/json", 
@@ -62,7 +62,7 @@ const Profile = () => {
 
     //make a unfollower user
     const unfollowUser = () => {
-        fetch('/unfollow', {
+        fetch('https://server-review.herokuapp.com/unfollow', {
             method:"put",
             headers:{
                 "Content-Type":"application/json", 

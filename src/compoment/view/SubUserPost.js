@@ -6,7 +6,7 @@ const Home = () => {
     const [data, setData] = useState([])
     const {state, dispatch} = useContext(UserContext)
     useEffect(()=>{
-        fetch('/subnewsfeed',{
+        fetch('https://server-review.herokuapp.com/subnewsfeed',{
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }
@@ -18,7 +18,7 @@ const Home = () => {
     },[])
 
     const makeComment = (text, postId) =>{
-        fetch('/comment', {
+        fetch('https://server-review.herokuapp.com/comment', {
             method:"put",
             headers:{
                 "Content-Type":"application/json", 
@@ -45,7 +45,7 @@ const Home = () => {
     }
 
     const deletePost = (postid) => {
-        fetch(`/deletepost/${postid}`,{
+        fetch(`https://server-review.herokuapp.com/deletepost/${postid}`,{
             method:"delete",
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")

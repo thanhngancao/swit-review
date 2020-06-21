@@ -41,7 +41,7 @@ const Register = () => {
             M.toast({html:"Enter correct email", classes:"red"})
             return
         }
-        fetch("/register",{
+        fetch("https://server-review.herokuapp.com/register",{
             method: "post",
             headers:{
                 "Content-Type": "application/json"
