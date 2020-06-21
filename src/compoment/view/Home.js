@@ -6,7 +6,7 @@ const Home = (props) => {
     const [data, setData] = useState([])
     const {state, dispatch} = useContext(UserContext)
     useEffect(()=>{
-        fetch('https://server-review.herokuapp.com/newsfeed',{
+        fetch('https://server-review.herokuapp.com/home',{
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }

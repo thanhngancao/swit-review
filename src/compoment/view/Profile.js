@@ -5,14 +5,14 @@ const Profile = () => {
     const [mypic, setMypic] = useState([])
     const {state, dispatch} = useContext(UserContext)
     useEffect(()=>{
-        fetch('https://server-review.herokuapp.com/mynewsfeed', {
+        fetch('https://server-review.herokuapp.com/userhome', {
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }
         }).then(res => res.json())
         .then(result => {
             console.log(result)
-            setMypic(result.mynewsfeed)
+            setMypic(result.userhome)
         })
     },[])
     return(

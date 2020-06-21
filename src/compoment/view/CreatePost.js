@@ -35,7 +35,7 @@ const CreatePost = (props) => {
             setBody('')
             setImageUrl('')
         }
-        let urlApi = 'https://server-review.herokuapp.com/createnewsfeed';
+        let urlApi = 'https://server-review.herokuapp.com/createreview';
         let METHOD = "POST";
         if(props.mode === 'edit') {
             urlApi = "https://server-review.herokuapp.com/posts/" + history.location.pathname.split('/')[2];
