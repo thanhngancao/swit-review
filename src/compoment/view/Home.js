@@ -60,7 +60,7 @@ const Home = (props) => {
     }
     console.log(props)
     const updatePostHandler = (postId) => {
-        props.history.push('/edit-post/' + postId);
+        props.history.push('/edit-post' + postId);
     }
     return(
         <div className="home">
