@@ -15,7 +15,7 @@ const Home = (props) => {
             setData(result.posts)
         })
     },[])
-
+    console.log(data)
     const makeComment = (text, postId) =>{
         fetch('https://server-review.herokuapp.com/comment', {
             method:"put",
@@ -58,7 +58,6 @@ const Home = (props) => {
             setData(newdata)
         })
     }
-    console.log(props)
     const updatePostHandler = (postId) => {
         props.history.push('/edit-post/' + postId);
     }
@@ -71,15 +70,14 @@ const Home = (props) => {
                             <h6 style={{margin:"10px", fontWeight:"bold", fontSize:"20px", color:"blue", textAlign: "center"}}>
                                 {state ? 
                                 <div>
-                                    {item.postedBy.name}
-                                    {item.postedBy._id == state._id && 
+                                    {item.postedBy ? item.postedBy.name: ''}
+                                    {item.postedBy && item.postedBy._id == state._id && 
                                     <i className="material-icons" style={{float:"right", cursor: 'pointer'}}
                                         onClick={() => deletePost(item._id)}>
                                         delete
                                     </i>
-                                    
                                     }
-                                    {item.postedBy._id == state._id && 
+                                    {item.postedBy && item.postedBy._id == state._id && 
                                     <i className="material-icons" style={{float:"right", cursor: 'pointer'}}
                                         onClick={() => updatePostHandler(item._id)}>
                                         edit
@@ -90,7 +88,7 @@ const Home = (props) => {
                                 }
                             <hr></hr>
                             </h6>
-                            <p style={{margin:"10px", fontSize:"15px", textAlign: "center", height:"50px"}}>{item.body}</p>
+                            <p style={{margin:"10px", fontSize:"15px", textAlign: "center"}}>{item.body}</p>
                         <div className="card-image">
                             <img src={item.picture} style={{width:"350px", height:"250px", marginLeft:"auto", marginRight:"auto", display:"block"}}/>
                         </div>
