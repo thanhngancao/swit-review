@@ -12,7 +12,7 @@ const Profile = () => {
         }).then(res => res.json())
         .then(result => {
             console.log(result)
-            setMypic(result.userhome)
+            setMypic(result.mynewsfeed)
         })
     },[])
     return(
