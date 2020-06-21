@@ -6,7 +6,7 @@ const Home = (props) => {
     const [data, setData] = useState([])
     const {state, dispatch} = useContext(UserContext)
     useEffect(()=>{
-        fetch('/newsfeed',{
+        fetch('https://server-review.herokuapp.com/newsfeed',{
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }
@@ -17,7 +17,7 @@ const Home = (props) => {
     },[])
 
     const makeComment = (text, postId) =>{
-        fetch('/comment', {
+        fetch('https://server-review.herokuapp.com/comment', {
             method:"put",
             headers:{
                 "Content-Type":"application/json", 

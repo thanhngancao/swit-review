@@ -12,7 +12,7 @@ const Login = () => {
             M.toast({html:"Enter correct email", classes:"green"})
             return
         }
-        fetch("/login",{
+        fetch("https://server-review.herokuapp.com/login",{// chuye het thah vay roi up lai
             method: "post",
             headers:{
                 "Content-Type": "application/json"

@@ -5,7 +5,7 @@ const Profile = () => {
     const [mypic, setMypic] = useState([])
     const {state, dispatch} = useContext(UserContext)
     useEffect(()=>{
-        fetch('/mynewsfeed', {
+        fetch('https://server-review.herokuapp.com/mynewsfeed', {
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
             }
