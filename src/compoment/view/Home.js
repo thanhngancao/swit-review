@@ -44,7 +44,7 @@ const Home = (props) => {
     }
 
     const deletePost = (postid) => {
-        fetch(`/deletepost/${postid}`,{
+        fetch(`https://server-review.herokuapp.com/deletepost/${postid}`,{
             method:"delete",
             headers:{
                 "Authorization": "" + localStorage.getItem("jwt")
@@ -60,7 +60,7 @@ const Home = (props) => {
     }
     console.log(props)
     const updatePostHandler = (postId) => {
-        props.history.push('/edit-post/' + postId);
+        props.history.push('https://server-review.herokuapp.com/edit-post/' + postId);
     }
     return(
         <div className="home">
@@ -90,7 +90,7 @@ const Home = (props) => {
                                 }
                             <hr></hr>
                             </h6>
-                            <p style={{margin:"10px", fontSize:"15px", textAlign: "center"}}>{item.body}</p>
+                            <p style={{margin:"10px", fontSize:"15px", textAlign: "center", height:"50px"}}>{item.body}</p>
                         <div className="card-image">
                             <img src={item.picture} style={{width:"350px", height:"250px", marginLeft:"auto", marginRight:"auto", display:"block"}}/>
                         </div>
