@@ -15,7 +15,6 @@ const Home = (props) => {
             setData(result.posts)
         })
     },[])
-    console.log(data)
     const makeComment = (text, postId) =>{
         fetch('https://server-review.herokuapp.com/comment', {
             method:"put",
@@ -71,7 +70,7 @@ const Home = (props) => {
                                 {state ? 
                                 <div>
                                     {item.postedBy ? item.postedBy.name: ''}
-                                    {item.postedBy && item.postedBy._id == state._id && 
+                                    {item.postedBy && item.postedBy._id == state._id &&
                                     <i className="material-icons" style={{float:"right", cursor: 'pointer'}}
                                         onClick={() => deletePost(item._id)}>
                                         delete
@@ -84,8 +83,10 @@ const Home = (props) => {
                                     </i>
                                     }
                                 </div>
-                                : item.postedBy.name
+                                : item.postedBy ? item.postedBy.name : null
                                 }
+
+                                
                             <hr></hr>
                             </h6>
                             <p style={{margin:"10px", fontSize:"15px", textAlign: "center"}}>{item.body}</p>

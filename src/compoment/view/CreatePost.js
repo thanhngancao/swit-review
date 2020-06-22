@@ -51,7 +51,8 @@ const CreatePost = (props) => {
             body:JSON.stringify({
                 title,
                 body,
-                pic:urlimage
+                pic:urlimage,
+                user: JSON.parse(localStorage.getItem("user"))._id
             })
         }).then(res => res.json())
         .then( data => {
