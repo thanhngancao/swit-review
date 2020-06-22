@@ -13,7 +13,7 @@ const CreatePost = (props) => {
     useEffect(()=>{
         if(props.mode === 'edit') {
             if(history.location.pathname.split('/')[2]) {
-                fetch("http://localhost:3000/posts/" + history.location.pathname.split('/')[2],{
+                fetch("https://server-review.herokuapp.com/posts/" + history.location.pathname.split('/')[2],{
                     method: "get",
                     headers:{
                         "Content-Type": "application/json",
@@ -35,6 +35,7 @@ const CreatePost = (props) => {
             setBody('')
             setImageUrl('')
         }
+        // let urlApi = 'https://server-review.herokuapp.com/createnewsfeed';
         let urlApi = 'https://server-review.herokuapp.com/createnewsfeed';
         let METHOD = "POST";
         if(props.mode === 'edit') {
